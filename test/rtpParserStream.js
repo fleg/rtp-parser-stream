@@ -20,6 +20,11 @@ RtpSourceStream.prototype._read = function() {
 };
 
 describe('RtpParserStream test', function() {
+	it('call RtpParserStream without new', function() {
+		var rtpParser = RtpParserStream();
+		expect(rtpParser).to.be.a(RtpParserStream);
+	});
+
 	it('should transform packets to objects', function(done) {
 		var count = 0,
 			total = 10,
