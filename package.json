@@ -1,6 +1,6 @@
 {
   "name": "rtp-parser-stream",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "RTP packets stream parser",
   "author": "Aleksey Timchenko <flegmatik.bel@gmail.com>",
   "license": "MIT",
