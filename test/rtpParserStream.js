@@ -1,7 +1,6 @@
 'use strict';
 
-var _ = require('underscore'),
-	expect = require('expect.js'),
+var expect = require('expect.js'),
 	RtpParserStream = require('../index'),
 	packet = require('./fixtures/packet'),
 	Readable = require('stream').Readable,
