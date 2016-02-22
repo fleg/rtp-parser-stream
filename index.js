@@ -9,10 +9,6 @@ function RtpParserStream(options) {
 		return new RtpParserStream(options);
 	}
 
-	options = options || {};
-	options.objectMode = Boolean(options.objectMode);
-	this._options = options;
-
 	Transform.call(this, options);
 }
 inherits(RtpParserStream, Transform);
@@ -21,9 +17,9 @@ RtpParserStream.prototype._transform = function(chunk, enc, callback) {
 	var parsed;
 	try {
 		parsed = parseRtpPacket(chunk);
-		this.push(this._options.objectMode ? parsed : parsed.payload);
+		this.push(this._writableState.objectMode ? parsed : parsed.payload);
 		callback();
-	} catch(err) {
+	} catch (err) {
 		callback(err);
 	}
 };
